@@ -26,14 +26,11 @@ public class StringUtilsTest {
         assertFalse(StringUtils.isLowerCase("XYZ"));
 
         // Test for NullPointerException when input is null
-        assertThrows(NullPointerException.class, () -> {
-            StringUtils.isLowerCase(null);
-        });
+        assertThrows(NullPointerException.class, () -> StringUtils.isLowerCase(null));
     }
 
     /**
      * Tests the removal of consecutive duplicate characters from a string.
-     *
      */
     @Test
     void testRemoveConsecutiveDuplicates() {
@@ -61,20 +58,16 @@ public class StringUtilsTest {
                 "When first 'ddd' is replaced by an empty string, then the last 'dd' does not match three or more consecutive repeating characters. ");
 
         // Test for IllegalArgumentException with invalid characters or empty string
-        assertThrows(IllegalArgumentException.class, () -> {
-            StringUtils.removeConsecutiveDuplicates("ABCDEF");
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            StringUtils.removeConsecutiveDuplicates("");
-        });
-        assertThrows(NullPointerException.class, () -> {
-            StringUtils.removeConsecutiveDuplicates(null);
-        });
+        assertThrows(IllegalArgumentException.class, () ->
+                StringUtils.removeConsecutiveDuplicates("ABCDEF"));
+        assertThrows(IllegalArgumentException.class, () ->
+                StringUtils.removeConsecutiveDuplicates(""));
+        assertThrows(NullPointerException.class, () ->
+                StringUtils.removeConsecutiveDuplicates(null));
     }
 
     /**
      * Tests replacing consecutive duplicate characters in a string.
-     *
      */
     @Test
     public void testReplaceConsecutiveDuplicates() {
@@ -100,18 +93,14 @@ public class StringUtilsTest {
         assertEquals("bdd", StringUtils.replaceConsecutiveDuplicates("dddcccdd"));
 
         // Test for IllegalArgumentException with invalid characters or empty string
-        assertThrows(IllegalArgumentException.class, () -> {
-            StringUtils.replaceConsecutiveDuplicates("ABCDEF");
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            StringUtils.replaceConsecutiveDuplicates("111abc");
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            StringUtils.replaceConsecutiveDuplicates("");
-        });
-        assertThrows(NullPointerException.class, () -> {
-            StringUtils.replaceConsecutiveDuplicates(null);
-        });
+        assertThrows(IllegalArgumentException.class, () ->
+                StringUtils.replaceConsecutiveDuplicates("ABCDEF"));
+        assertThrows(IllegalArgumentException.class, () ->
+                StringUtils.replaceConsecutiveDuplicates("111abc"));
+        assertThrows(IllegalArgumentException.class, () ->
+                StringUtils.replaceConsecutiveDuplicates(""));
+        assertThrows(NullPointerException.class, () ->
+                StringUtils.replaceConsecutiveDuplicates(null));
     }
 
     /**
